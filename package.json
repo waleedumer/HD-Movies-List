@@ -16,10 +16,11 @@
     "hbs": "^2.53.0",
     "request": "*"
   },
-  "devDependencies": {},
-  "description": ""
-},
-"engines": {    
+  "engines": {    
     "node": "5.4.0",    
     "npm": "3.3.12"  
+},
+  "devDependencies": {},
+  "description": ""
 }
+
