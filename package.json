@@ -18,8 +18,8 @@
   },
   "devDependencies": {},
   "description": ""
-}
+},
 "engines": {    
     "node": "5.4.0",    
     "npm": "3.3.12"  
-},
+}
