@@ -17,8 +17,8 @@
     "request": "*"
   },
   "engines": {    
-    "node": "5.4.0",    
-    "npm": "3.3.12"  
+    "node": "5.6.0",    
+    "npm": "4.0.0"  
 },
   "devDependencies": {},
   "description": ""
