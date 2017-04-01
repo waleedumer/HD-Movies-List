@@ -89,6 +89,10 @@ app.get('/', function(req, res) {
 
 });
 
+app.get('/single.html', function (req, res) {
+  res.send('single.html')
+});
+
 
 app.listen(port);
 
