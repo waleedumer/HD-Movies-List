@@ -90,7 +90,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/single.html', function (req, res) {
-  res.send('single')
+  res.send('single.ejs')
 });
 
 
