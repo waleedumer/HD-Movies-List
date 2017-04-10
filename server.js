@@ -85,7 +85,7 @@ app.configure(function() {
 });
 if(req.url === '/single.html')
 {
-  res.wri
+
 }
 app.get('/', function(req, res) {
     res.render('index', {json: json});
