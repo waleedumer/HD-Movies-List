@@ -94,6 +94,13 @@ app.get('/', function(req, res) {
 
 });
 
+$(document).ready(function() {
+    $.ajax({
+        
+            alert('error');
+        
+    });
+});
 
          app.get('/single?', function(req, res) {
              alert("hello");
