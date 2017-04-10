@@ -94,7 +94,7 @@ app.get('/', function(req, res) {
 
 });
 
-app.get('/a', function(req, res) {
+app.get('/single?', function(req, res) {
     res.render('single', {json: json});
 
 });
