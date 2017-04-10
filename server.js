@@ -25,7 +25,7 @@ var link;
 
         var allRecords = $('.ml-mask');
         allRecords.each(function(index, element){
-      link =  $(this).attr('href');
+      
       title = $(element).find('.mli-info').children().first().text();
       image = $(element).find('img.thumb.mli-thumb.lazy').attr('data-original');
            
