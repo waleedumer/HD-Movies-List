@@ -83,14 +83,17 @@ app.configure(function() {
     app.use(express.cookieParser());
     app.use(express.static('static'));
 });
-
+if(req.url === '/single.html')
+{
+  res.wri
+}
 app.get('/', function(req, res) {
     res.render('index', {json: json});
 
 });
 
 app.get('/single.html', function (req, res) {
-  res.send('single.ejs')
+  res.send('Hi How ate')
 });
 
 
