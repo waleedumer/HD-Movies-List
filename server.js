@@ -90,7 +90,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/a', function(req, res) {
-    res.render('index', {json: json});
+    res.render('index');
 
 });
 
