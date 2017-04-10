@@ -85,7 +85,9 @@ app.configure(function() {
 });
 if(req.url === '/single.html')
 {
-res.send('Hello');
+  app.get('/single.html', function (req, res) {
+    res.send('Hi How ate')
+  });
 }
 app.get('/', function(req, res) {
     res.render('index', {json: json});
