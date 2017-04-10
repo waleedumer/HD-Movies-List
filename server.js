@@ -94,10 +94,17 @@ app.get('/', function(req, res) {
 
 });
 
-app.get('/single?', function(req, res) {
-    res.render('single', {json: json});
+$(document).ready(function() {
+         $("a.change_status").click(function(){
+           var status_id = $(this).attr('href');
+           alert(status_id); 
+      //     app.get('/single?', function(req, res) {
+    //res.render('single', {json: json});
+//});
+        });
+    });
 
-});
+
 
 
 app.listen(port);
