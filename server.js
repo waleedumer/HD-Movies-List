@@ -89,8 +89,9 @@ app.get('/', function(req, res) {
 
 });
 
-app.get('/single.html', function (req, res) {
-  res.send('Hlels')
+app.get('/a', function(req, res) {
+    res.render('index', {json: json});
+
 });
 
 
