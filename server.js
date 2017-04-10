@@ -95,9 +95,10 @@ app.get('/', function(req, res) {
 });
 
 
-      //     app.get('/single?', function(req, res) {
-    //res.render('single', {json: json});
-//});
+         app.get('/single?', function(req, res) {
+             alert("hello");
+    res.render('single', {json: json});
+});
 
 
 
