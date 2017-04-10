@@ -6,10 +6,12 @@ var express = require('express'),
     path = require('path');
     var title;
     var image;
+var link;
     var json = [];
     var tempdata={
       title:title,
-      image:image
+      image:image,
+        link:link
     }
  request ('https://yesmovies.to/',
   function (error, response, html){
@@ -23,11 +25,14 @@ var express = require('express'),
 
         var allRecords = $('.ml-mask');
         allRecords.each(function(index, element){
+      link =  $(this).attr('href');
       title = $(element).find('.mli-info').children().first().text();
       image = $(element).find('img.thumb.mli-thumb.lazy').attr('data-original');
+           
      tempdata={
         title:title,
-        image:image
+        image:image,
+         link:link
       }
        console.log(image);
 
