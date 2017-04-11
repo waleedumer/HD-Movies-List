@@ -33,7 +33,7 @@ var json2 = [];
     if(!error && response.statusCode == 200){
           console.log('page loaded');
 
-      var $2 = cheerio.load(html);
+      var $2 = cheerio2.load(html);
 
 
 
