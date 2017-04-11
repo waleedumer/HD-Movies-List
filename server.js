@@ -23,7 +23,7 @@ var json2 = [];
         src:src
     }
 // request ('https://yesmovies.to/',
-    request ('https://yesmovies.to/movie/smurfs-the-lost-village-20255/watching.html',
+    request ('https://yesmovies.to/movie/life-2017-20051/607931-8/watching.html',
   function (error, response, html){
     if(!error && response.statusCode == 200){
           console.log('page loaded');
