@@ -34,13 +34,14 @@ var json2 = [];
 
 
 
-        var allRecords = $('.jwplayer');
+        var allRecords = $('.jw-media');
         allRecords.each(function(index, element){
       //link = $(this).attr('src');
       //title = $(element).find('.mli-info').children().first().text();
       //image = $(element).find('img.thumb.mli-thumb.lazy').attr('data-original');
            
-            title = $(element).find('.jw-media').children().first().attr('src');
+            //title = $(element).find('.jw-media').children().first().attr('src');
+            title = $(this).children().first().attr('src');
      tempdata={
         title:title,
         image:image,
