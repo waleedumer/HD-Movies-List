@@ -34,12 +34,13 @@ var json2 = [];
 
 
 
-        var allRecords = $('video.jw-video.jw-reset');
+        var allRecords = $('.mvic-stats');
         allRecords.each(function(index, element){
-      link = $(this).attr('src');
-      title = $(element).find('.mli-info').children().first().text();
-      image = $(element).find('img.thumb.mli-thumb.lazy').attr('data-original');
+      //link = $(this).attr('src');
+      //title = $(element).find('.mli-info').children().first().text();
+      //image = $(element).find('img.thumb.mli-thumb.lazy').attr('data-original');
            
+            title = $(element).find('.mvic-desc').children().third().text();
      tempdata={
         title:title,
         image:image,
