@@ -28,13 +28,7 @@ var json2 = [];
 
       var $ = cheerio.load(html);
         
-        request2 ('https://yesmovies.to/movie/life-2017-20051/watching.html',
-  function (error, response, html){
-    if(!error && response.statusCode == 200){
-          console.log('page loaded');
-
-      var $2 = cheerio2.load(html);
-
+        
 
 
 
@@ -65,27 +59,7 @@ var json2 = [];
   saveData();
   }
 });
-        var allRecords2 = $('.jw-video');
-        allRecords2.each(function(index, element){
-      link = $(this).attr('src');    
-     tempdata={
-        src:src
-      }
-
-        json2.push(tempdata2);
-
-      });
-  //  console.log('all records: ' + allRecords);
-  function saveData(){
-    fs2.writeFile('source2.json', JSON.stringify(json2, null, 4), function(err){
-
-      //console.log('File successfully written! - Check your project directory for the output.json file');
-
-  });
-  }
-  saveData();
-  }
-});
+       
 var app = express();
 // var server = http.createServer(function(req, res){
 //   res.writeHead(200, {'Content-Type': 'text/html'});
@@ -133,7 +107,35 @@ app.get('/', function(req, res) {
 
 
          app.get('/single?', function(req, res) {
-             
+             request2 ('https://yesmovies.to/movie/life-2017-20051/watching.html',
+  function (error, response, html){
+    if(!error && response.statusCode == 200){
+          console.log('page loaded');
+
+      var $2 = cheerio2.load(html);
+        
+         var allRecords2 = $('.jw-video');
+        allRecords2.each(function(index, element){
+      link = $(this).attr('src');    
+     tempdata={
+        src:src
+      }
+
+        json2.push(tempdata2);
+
+      });
+  //  console.log('all records: ' + allRecords);
+  function saveData(){
+    fs2.writeFile('source2.json', JSON.stringify(json2, null, 4), function(err){
+
+      //console.log('File successfully written! - Check your project directory for the output.json file');
+
+  });
+  }
+  saveData();
+  }
+});
+
     res.render('single', {json2: json2});
              res.set('Location', req.url);
 });
