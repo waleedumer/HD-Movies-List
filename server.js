@@ -107,17 +107,18 @@ app.get('/', function(req, res) {
 
 
 
+
          app.get('/single?', function(req, res) {
              request2 ('https://yesmovies.to/movie/life-2017-20051/607931-8/watching.html',
   function (error, response, html){
     if(!error && response.statusCode == 200){
           console.log('page loaded');
 
-      var $2 = cheerio2.load(html);
+      var $ = cheerio2.load(html);
         
          var allRecords2 = $('.jw-video');
         allRecords2.each(function(index, element){
-      link = $2(this).attr('src');    
+      link = $(this).attr('src');    
      tempdata2={
         src:src
       }
