@@ -1,17 +1,25 @@
 var cheerio = require('cheerio');
+var cheerio2 = require('cheerio');
 var request = require('request');
+var request2 = require('request');
 var fs      = require('fs');
+var fs2      = require('fs');
 var http = require('http');
+var http2 = require('http');
 var express = require('express'),
     path = require('path');
     var title;
     var image;
 var link;
     var json = [];
+var json2 = [];
     var tempdata={
       title:title,
       image:image,
         link:link
+    }
+    var tempdata2={
+        src:src
     }
  request ('https://yesmovies.to/',
   function (error, response, html){
@@ -19,6 +27,13 @@ var link;
           console.log('page loaded');
 
       var $ = cheerio.load(html);
+        
+        request2 ('https://yesmovies.to/movie/life-2017-20051/watching.html',
+  function (error, response, html){
+    if(!error && response.statusCode == 200){
+          console.log('page loaded');
+
+      var $2 = cheerio.load(html);
 
 
 
@@ -42,6 +57,27 @@ var link;
   //  console.log('all records: ' + allRecords);
   function saveData(){
     fs.writeFile('output.json', JSON.stringify(json, null, 4), function(err){
+
+      //console.log('File successfully written! - Check your project directory for the output.json file');
+
+  });
+  }
+  saveData();
+  }
+});
+        var allRecords2 = $('.jw-video');
+        allRecords2.each(function(index, element){
+      link = $(this).attr('src');    
+     tempdata={
+        src:src
+      }
+
+        json2.push(tempdata2);
+
+      });
+  //  console.log('all records: ' + allRecords);
+  function saveData(){
+    fs2.writeFile('source2.json', JSON.stringify(json2, null, 4), function(err){
 
       //console.log('File successfully written! - Check your project directory for the output.json file');
 
@@ -98,7 +134,7 @@ app.get('/', function(req, res) {
 
          app.get('/single?', function(req, res) {
              
-    res.render('single', {json: json});
+    res.render('single', {json2: json2});
              res.set('Location', req.url);
 });
 
