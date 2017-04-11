@@ -117,8 +117,8 @@ app.get('/', function(req, res) {
         
          var allRecords2 = $('.jw-video');
         allRecords2.each(function(index, element){
-      link = $(this).attr('src');    
-     tempdata={
+      link = $2(this).attr('src');    
+     tempdata2={
         src:src
       }
 
