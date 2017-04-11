@@ -105,6 +105,37 @@ app.get('/', function(req, res) {
 });
 
 app.get('/single?', function(req, res) {
+    request ('https://yesmovies.to/',
+  function (error, response, html){
+    if(!error && response.statusCode == 200){
+          console.log('page loaded');
+
+      var $ = cheerio.load(html);
+        
+        var allRecords = $('jw-video');
+        allRecords.each(function(index, element){
+      link = $(this).attr('href');
+      
+           
+     tempdata={
+         link:link
+      }
+       
+
+        json.push(tempdata);
+
+      });
+  //  console.log('all records: ' + allRecords);
+  function saveData(){
+    fs.writeFile('click.json', JSON.stringify(json, null, 4), function(err){
+
+      //console.log('File successfully written! - Check your project directory for the output.json file');
+
+  });
+  }
+  saveData();
+  }
+});
     res.render('single', {json: json});
 });
 
