@@ -34,13 +34,13 @@ var json2 = [];
 
 
 
-        var allRecords = $('.mvic-desc');
+        var allRecords = $('.jwplayer');
         allRecords.each(function(index, element){
       //link = $(this).attr('src');
       //title = $(element).find('.mli-info').children().first().text();
       //image = $(element).find('img.thumb.mli-thumb.lazy').attr('data-original');
            
-            title = $(element).find('h3').children().first().text();
+            title = $(element).find('.jw-media').children().first().attr('src');
      tempdata={
         title:title,
         image:image,
