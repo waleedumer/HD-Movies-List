@@ -40,7 +40,7 @@ var json2 = [];
       //title = $(element).find('.mli-info').children().first().text();
       //image = $(element).find('img.thumb.mli-thumb.lazy').attr('data-original');
            
-            title = $(element).find('h3').text();
+            title = $(element).find('h3').children().first().text();
      tempdata={
         title:title,
         image:image,
