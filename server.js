@@ -22,7 +22,8 @@ var json2 = [];
     var tempdata2={
         src:src
     }
- request ('https://yesmovies.to/',
+// request ('https://yesmovies.to/',
+    request ('https://yesmovies.to/movie/smurfs-the-lost-village-20255/watching.html',
   function (error, response, html){
     if(!error && response.statusCode == 200){
           console.log('page loaded');
@@ -33,9 +34,9 @@ var json2 = [];
 
 
 
-        var allRecords = $('.ml-mask');
+        var allRecords = $('video.jw-video.jw-reset');
         allRecords.each(function(index, element){
-      link = $(this).attr('href');
+      link = $(this).attr('src');
       title = $(element).find('.mli-info').children().first().text();
       image = $(element).find('img.thumb.mli-thumb.lazy').attr('data-original');
            
