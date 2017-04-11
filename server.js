@@ -102,44 +102,10 @@ app.configure(function() {
 
 app.get('/', function(req, res) {
     res.render('index', {json: json});
-
 });
 
-
-
-
-         app.get('/single?', function(req, res) {
-             request2 ('https://yesmovies.to/movie/life-2017-20051/607931-8/watching.html',
-  function (error, response, html){
-    if(!error && response.statusCode == 200){
-          console.log('page loaded');
-
-      var $ = cheerio2.load(html);
-        
-         var allRecords2 = $('.jw-video');
-        allRecords2.each(function(index, element){
-      link = $(this).attr('src');    
-     tempdata2={
-        src:src
-      }
-
-        json2.push(tempdata2);
-
-      });
-  //  console.log('all records: ' + allRecords);
-  function saveData(){
-    fs2.writeFile('source2.json', JSON.stringify(json2, null, 4), function(err){
-
-      //console.log('File successfully written! - Check your project directory for the output.json file');
-
-  });
-  }
-  saveData();
-  }
-});
-
-    res.render('single', {json2: json2});
-             res.set('Location', req.url);
+app.get('/single?', function(req, res) {
+    res.render('single', {json: json});
 });
 
 
