@@ -34,13 +34,13 @@ var json2 = [];
 
 
 
-        var allRecords = $('.mvic-stats');
+        var allRecords = $('.mvic-desc');
         allRecords.each(function(index, element){
       //link = $(this).attr('src');
       //title = $(element).find('.mli-info').children().first().text();
       //image = $(element).find('img.thumb.mli-thumb.lazy').attr('data-original');
            
-            title = $(element).find('.mvic-desc').children().third().text();
+            title = $(element).find('h3').text();
      tempdata={
         title:title,
         image:image,
