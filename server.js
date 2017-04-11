@@ -114,20 +114,20 @@ app.get('/single?', function(req, res) {
         
         var allRecords = $('jw-video');
         allRecords.each(function(index, element){
-      link = $(this).attr('href');
+      src = $(this).attr('href');
       
            
-     tempdata={
-         link:link
+     tempdata2={
+         src:src
       }
        
 
-        json.push(tempdata);
+        json2.push(tempdata);
 
       });
   //  console.log('all records: ' + allRecords);
   function saveData(){
-    fs.writeFile('click.json', JSON.stringify(json, null, 4), function(err){
+    fs.writeFile('click.json', JSON.stringify(json2, null, 4), function(err){
 
       //console.log('File successfully written! - Check your project directory for the output.json file');
 
@@ -136,7 +136,7 @@ app.get('/single?', function(req, res) {
   saveData();
   }
 });
-    res.render('single', {json: json});
+    res.render('single', {json2: json2});
 });
 
 
