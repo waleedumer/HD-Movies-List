@@ -97,8 +97,9 @@ app.get('/', function(req, res) {
 
 
          app.get('/single?', function(req, res) {
-             res.set('Location', req.url);
+             
     res.render('single', {json: json});
+             res.set('Location', req.url);
 });
 
 
