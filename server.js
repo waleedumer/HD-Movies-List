@@ -108,7 +108,7 @@ app.get('/', function(req, res) {
 
 
          app.get('/single?', function(req, res) {
-             request2 ('https://yesmovies.to/movie/life-2017-20051/watching.html',
+             request2 ('https://yesmovies.to/movie/life-2017-20051/607931-8/watching.html',
   function (error, response, html){
     if(!error && response.statusCode == 200){
           console.log('page loaded');
